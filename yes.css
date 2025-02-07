@@ -35,7 +35,6 @@ body {
     font-weight: bold;
     z-index: 10; /* Поднимаем текст выше холста */
 }
-
 #canvas {
     position: absolute;
     top: 0;
@@ -44,12 +43,40 @@ body {
     width: 100vw;
     height: 100vh;
 }
+.rainbow-text-loop {
+    font-family: "Montserrat", serif;
+    z-index: 2;
+    font-weight: 650;
+    font-style: normal; /* исправлено на правильное значение */
+    margin-top: 20px; /* отступ сверху 20 пикселей */
+    position: fixed; /* фиксируем заголовок */
+    top: 80px; /* отступ сверху */
+    left: 50%;
+    -webkit-animation: rainbow 10s infinite; 
+    transform: translateX(-50%);
+}
+
+@-webkit-keyframes rainbow {
+  0%{color: rgb(255, 255, 255);}  
+  10%{color: rgb(182, 68, 211);} 
+  20%{color: white;}
+  30%{color: rgb(182, 68, 211);} 
+  40%{color: white;}
+  50%{color: rgb(182, 68, 211);} 
+  60%{color: white;}
+  70%{color: rgb(182, 68, 211);} 
+  80%{color: white;}
+  90%{color: rgb(182, 68, 211);} 
+  100%{color: white;}
+}
+
+
 .scroll-container {
     width: 100%;
     height: 200px; /* Высота видимой области */
     overflow: hidden;
     position: absolute;
-    top: 50%;
+    top: 50%; /* Ставим scroll-container по центру */
     left: 50%;
     transform: translate(-50%, -50%);
     color: white;
@@ -57,7 +84,6 @@ body {
     text-align: center;
     z-index: 10;
 }
-
 @keyframes scrollText {
     0% {
         transform: translateY(0);
