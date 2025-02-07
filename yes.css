@@ -94,6 +94,9 @@ body {
 }
 
 .scroll-content {
+    font-family: "Montserrat", serif;
+    font-weight: 550;
+    font-style: normal; /* исправлено на правильное значение */
     display: flex;
     flex-direction: column;
     align-items: center;
