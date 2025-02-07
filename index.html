@@ -1,0 +1,48 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>👋 Люблю тебя.</title>
+    <link rel="stylesheet" href="main.css"> 
+    <link rel="preconnect" href="https://fonts.googleapis.com">
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+    <link href="https://fonts.googleapis.com/css2?family=Montserrat:ital,wght@0,100..900;1,100..900&display=swap" rel="stylesheet">
+    <link rel="icon" href="image/favicon.png" type="image/favicon.png">
+
+</head>
+<body>
+    <div class="container"></div>
+    <div class="content">
+        <h1 class="logo">Do you love me? ❤️</h1>
+        <div class="buttons">
+            <a href="yes.html">
+            <button class="button">Да.</button>
+        </a>
+             <a href="notwo.html">
+                <button class="button">Nет</button>
+              </a>
+        </div>
+    </div>
+    <script>
+        function createHeart() {
+            const heart = document.createElement("img");
+            heart.classList.add("heart");
+            heart.src = "image/heart.svg";
+            document.querySelector('.container').appendChild(heart);
+            
+            const startPosition = Math.random() * window.innerWidth;
+            const randomXMovement = (Math.random() - 0.5) * 200; 
+            heart.style.left = `${startPosition}px`;
+            heart.style.top = `${window.innerHeight}px`;
+            heart.style.animationDuration = `${Math.random() * 3 + 2}s`;
+            heart.style.setProperty("--randomX", `${randomXMovement}px`);
+            
+            setTimeout(() => {
+                heart.remove();
+            }, 5000);
+        }
+        setInterval(createHeart, 100);
+    </script>
+</body>
+</html>
